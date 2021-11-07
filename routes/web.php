@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 
 //View routing
 
@@ -24,7 +24,7 @@ Route::get('/About', 'App\Http\Controllers\SiteController@About');
 Route::get('/Contact', 'App\Http\Controllers\SiteController@Contact');
 Route::get('/Name/{firstname}/{middlename}/{lastname}', 'App\Http\Controllers\DemoController@YourName');
 // Route::get('/','App\Http\Controllers\DemoController@Home');
-
+Route::get('login', [UserController :: class , 'login']);
 
 
 

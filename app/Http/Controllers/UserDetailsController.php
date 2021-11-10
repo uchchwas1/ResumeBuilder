@@ -39,6 +39,12 @@ class UserDetailsController extends Controller
         // echo "Save Information Successfully";
 
         // return back();
+
+        $request->validate([
+            'fullname' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+        ]);
         $detail = new UserDetails();
         
         $detail->fullname = $request->input('fullname');

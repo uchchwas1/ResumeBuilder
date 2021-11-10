@@ -2,6 +2,13 @@
 @section('content')
 
 <div class="container">
+
+<div>
+    @if(session()->has('errors'))
+        @foreach($errors->all() as $error)
+          <p>{{$error}}</p>
+        @endforeach
+    @endif
  <form action = "/user-detail" method = 'POST'>
      @csrf
        <input type = "text" name = "fullname" placeholder = "fullname">

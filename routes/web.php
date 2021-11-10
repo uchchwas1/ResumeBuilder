@@ -43,8 +43,8 @@ Route::get('/home', function(){
 Route::get('/about', function(){
     return view('AboutPage');
 });
-Route::get('/user-detail/create', [UserDetailsController::class, 'create']);
-Route::post('/user-detail', [UserDetailsController::class, 'store']);
+Route::get('/user-detail/create', [UserDetailsController::class, 'create'])->middleware('auth');
+Route::post('/user-detail', [UserDetailsController::class, 'store'])->middleware('auth');
 
 
 

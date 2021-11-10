@@ -35,8 +35,18 @@ class UserDetailsController extends Controller
      */
     public function store(Request $request)
     {
-        UserDetails::create($request->all());
-        echo "Save Information Successfully";
+        // UserDetails::create($request->all());
+        // echo "Save Information Successfully";
+
+        // return back();
+        $detail = new UserDetails();
+        
+        $detail->fullname = $request->input('fullname');
+        $detail->phone = $request->input('phone');
+        $detail->email = $request->input('email');
+        $detail->address = $request->input('address');
+        $detail->user_id = auth()->id();
+        $detail->save();
 
         return back();
     }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\UserDetailsController;
 
 //View routing
 
@@ -42,6 +43,8 @@ Route::get('/home', function(){
 Route::get('/about', function(){
     return view('AboutPage');
 });
+Route::get('/user-detail/create', [UserDetailsController::class, 'create']);
+Route::post('/user-detail', [UserDetailsController::class, 'store']);
 
 
 

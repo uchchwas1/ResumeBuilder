@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Registration')
 @section('content')
 <main class="signup-form">
     <div class="cotainer">

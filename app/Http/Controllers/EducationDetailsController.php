@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserDetails;
+use App\Models\EducationDetails;
 use Illuminate\Http\Request;
 
-class UserDetailsController extends Controller
+class EducationDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class UserDetailsController extends Controller
      */
     public function create()
     {
-        return view('usr_details.CreateNew');
+        return view('education.details');
     }
 
     /**
@@ -35,17 +35,14 @@ class UserDetailsController extends Controller
      */
     public function store(Request $request)
     {
-        // UserDetails::create($request->all());
-        // echo "Save Information Successfully";
-
-        // return back();
-
         $request->validate([
-            'fullname' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
+            'school_name' => 'required',
+            'degree' => 'required',
+            'field_of_study' => 'required',
+            'graduation_start_date' => 'required',
+            'graduation_end_date' => 'required',
         ]);
-        $detail = new UserDetails();
+        $detail = new EducationDetails();
         
         $detail->fullname = $request->input('fullname');
         $detail->phone = $request->input('phone');
@@ -61,10 +58,10 @@ class UserDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\UserDetails  $userDetails
+     * @param  \App\Models\EducationDetails  $educationDetails
      * @return \Illuminate\Http\Response
      */
-    public function show(UserDetails $userDetails)
+    public function show(EducationDetails $educationDetails)
     {
         //
     }
@@ -72,10 +69,10 @@ class UserDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\UserDetails  $userDetails
+     * @param  \App\Models\EducationDetails  $educationDetails
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserDetails $userDetails)
+    public function edit(EducationDetails $educationDetails)
     {
         //
     }
@@ -84,10 +81,10 @@ class UserDetailsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserDetails  $userDetails
+     * @param  \App\Models\EducationDetails  $educationDetails
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserDetails $userDetails)
+    public function update(Request $request, EducationDetails $educationDetails)
     {
         //
     }
@@ -95,10 +92,10 @@ class UserDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\UserDetails  $userDetails
+     * @param  \App\Models\EducationDetails  $educationDetails
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserDetails $userDetails)
+    public function destroy(EducationDetails $educationDetails)
     {
         //
     }

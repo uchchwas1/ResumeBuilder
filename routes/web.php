@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\UserDetailsController;
+use App\Http\Controllers\EducationDetailsController;
 
 //View routing
 
@@ -43,8 +44,10 @@ Route::get('/home', function(){
 Route::get('/about', function(){
     return view('AboutPage');
 });
-Route::get('/user-detail/create', [UserDetailsController::class, 'create'])->middleware('auth');
-Route::post('/user-detail', [UserDetailsController::class, 'store'])->middleware('auth');
+Route::get('user-detail/create', [UserDetailsController::class, 'create'])->middleware('auth')->name('user-detail.create');
+Route::post('user-detail', [UserDetailsController::class, 'store'])->middleware('auth');
+Route::get('education/details', [EducationDetailsController::class, 'create'])->middleware('auth')->name('education.details');
+Route::post('education/details', [EducationDetailsController::class, 'store'])->middleware('auth');
 
 
 

@@ -13,7 +13,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('signout') }}">Logout</a>
                     </li>
-                    @endguest
+                    <div class = 'container'>
+                        <h2>Welcome to Resume Builder</h2>
+                        <a name = "" id = "" class = "btn btn-primary" href = "{{route('user-detail.create')}}" role = "button">Build Now</a>
+                    </div>
+                        @endguest
                 </ul>
 
 @endsection

@@ -15,6 +15,7 @@ class CreateEducationDetailsTable extends Migration
     {
         Schema::create('education_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('school_name');
             $table->string('school_location');
             $table->string('degree');

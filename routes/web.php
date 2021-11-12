@@ -48,6 +48,8 @@ Route::get('user-detail/create', [UserDetailsController::class, 'create'])->midd
 Route::post('user-detail', [UserDetailsController::class, 'store'])->middleware('auth');
 Route::get('education/details', [EducationDetailsController::class, 'create'])->middleware('auth')->name('education.details');
 Route::post('education/details', [EducationDetailsController::class, 'store'])->middleware('auth');
+Route::get('education', [EducationDetailsController::class, 'index'])->middleware('auth')->name('education.index');
+
 
 
 

@@ -14,7 +14,9 @@ class EducationDetailsController extends Controller
      */
     public function index()
     {
-        //
+        $education = auth()->user()->education;
+        
+        return view('education.index', compact('education'));
     }
 
     /**
@@ -54,7 +56,7 @@ class EducationDetailsController extends Controller
         // //return back();
         // return redirect()->route('education.details');
         auth()->user()->education()->create($request->all());
-        return redirect()->route('education.details');
+        return redirect()->route('education.index');
     }
 
     /**
@@ -76,7 +78,7 @@ class EducationDetailsController extends Controller
      */
     public function edit(EducationDetails $educationDetails)
     {
-        //
+        return view('education.edit', compact('education'));
     }
 
     /**

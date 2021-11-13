@@ -44,7 +44,7 @@ class EducationDetailsController extends Controller
             'graduation_start_date' => 'required',
             'graduation_end_date' => 'required',
         ]);
-        $detail = new EducationDetails();
+        //$detail = new EducationDetails();
         
         // $detail->fullname = $request->input('fullname');
         // $detail->phone = $request->input('phone');
@@ -76,7 +76,7 @@ class EducationDetailsController extends Controller
      * @param  \App\Models\EducationDetails  $educationDetails
      * @return \Illuminate\Http\Response
      */
-    public function edit(EducationDetails $educationDetails)
+    public function edit(EducationDetails $education)
     {
         return view('education.edit', compact('education'));
     }
@@ -88,9 +88,28 @@ class EducationDetailsController extends Controller
      * @param  \App\Models\EducationDetails  $educationDetails
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EducationDetails $educationDetails)
+    public function update(Request $request, EducationDetails $education)
     {
-        //
+        $request->validate([
+            'school_name' => 'required',
+            'degree' => 'required',
+            'field_of_study' => 'required',
+            'graduation_start_date' => 'required',
+            'graduation_end_date' => 'required',
+        ]);
+        //$detail = new EducationDetails();
+        
+        // $detail->fullname = $request->input('fullname');
+        // $detail->phone = $request->input('phone');
+        // $detail->email = $request->input('email');
+        // $detail->address = $request->input('address');
+        // $detail->user_id = auth()->id();
+        // $detail->save();
+
+        // //return back();
+        // return redirect()->route('education.details');
+        $education->update($request->all());
+        return redirect()->route('education.index');
     }
 
     /**
@@ -99,8 +118,10 @@ class EducationDetailsController extends Controller
      * @param  \App\Models\EducationDetails  $educationDetails
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EducationDetails $educationDetails)
+    public function destroy(EducationDetails $education)
     {
-        //
+        $education->delete();
+
+        return back();
     }
 }

@@ -26,6 +26,7 @@
 @endforeach
     
 <a  class="btn btn-primary" href="{{route('experience.create')}}" role="button">Add Experiences</a>
+<a  class="btn btn-primary" href="{{route('skill.index')}}" role="button">Add Skills</a>
 
 @endsection
 

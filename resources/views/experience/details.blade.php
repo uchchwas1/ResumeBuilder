@@ -4,8 +4,13 @@
 
 <div class="container">
     <h2>Work details</h2>
-
-
+</div>
+@if(session()->has('errors'))
+        @foreach($errors->all() as $error)
+          <p>{{$error}}</p>
+        @endforeach
+    @endif
+<div>
     <form action="/experience" method='POST'>
         @csrf
 

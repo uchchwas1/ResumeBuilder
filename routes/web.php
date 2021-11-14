@@ -7,6 +7,7 @@ use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\EducationDetailsController;
 use App\Http\Controllers\ExperienceDetailsController;
 use App\Http\Controllers\SkillDetailsController;
+use App\Http\Controllers\ResumeDetailsController;
 //View routing
 
 // Route::get('/', function () {
@@ -65,4 +66,5 @@ Route::resource('user-detail', UserDetailsController::class)->middleware('auth')
 Route::resource('education', EducationDetailsController::class)->middleware('auth');
 Route::resource('experience', ExperienceDetailsController::class)->middleware('auth');
 Route::resource('skill', SkillDetailsController::class)->middleware('auth');
+Route::get('resume', [ResumeDetailsController::class, 'index'])->name('resume.index')->middleware('auth');
 ?>

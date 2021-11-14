@@ -14,6 +14,9 @@
        <input type = "text" name = "email" placeholder = "email" value="{{$userDetail->email}}">
        <input type = "text" name = "phone" placeholder = "mobile number" value="{{$userDetail->phone}}">
        <input type = "text" name = "address" placeholder = "address" value="{{$userDetail->address}}">
+       <textarea name = "summary" id ="" cols= "30" rows = "4" >
+              {{$userDetail->summary}}
+       </textarea>
        <input type = "submit" value = "Submit">
 
 

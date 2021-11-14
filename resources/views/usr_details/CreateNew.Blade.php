@@ -15,6 +15,7 @@
        <input type = "text" name = "email" placeholder = "email">
        <input type = "text" name = "phone" placeholder = "mobile number">
        <input type = "text" name = "address" placeholder = "address">
+       <textarea name = "summary" id ="" cols= "30" rows = "4" ></textarea>
        <input type = "submit" value = "Submit">
  </form>
 </div>

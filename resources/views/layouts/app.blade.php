@@ -24,10 +24,22 @@
           <a class="nav-link active" aria-current="page" href=./home>Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href=" {{route('user-detail.index')}} ">Heading</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="./login">Sign-in</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./registration">Sign-up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('education.index')}}">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('experience.index')}}">Work History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('skill.index')}}">Skills</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>

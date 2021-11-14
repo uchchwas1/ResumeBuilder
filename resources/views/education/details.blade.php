@@ -9,6 +9,7 @@
           <p>{{$error}}</p>
         @endforeach
     @endif
+   
  <form action = "/education/details" method = 'POST'>
      @csrf
        <input type = "text" name = "school_name" placeholder = "School Name">

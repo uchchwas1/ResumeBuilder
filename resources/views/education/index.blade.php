@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-<h1>Education Summary</h2>
+<div class="mb-2">
+<h2>Education Summary</h2>
    
     @foreach($education as $e)
      <div class = "card">
@@ -14,11 +15,11 @@
             @method('DELETE')
             <input type="submit" value="Delete" class="btn btn-sm btn-danger">
             </form>
-          <div>
+        </div>
     </div>
-</div>
-    @endforeach
-    
-    <a  class="btn btn-primary" href="{{route('education.details')}}" role="button">Add Another Education</a>
 
+    @endforeach
+    </div>   
+    <a  class="btn btn-primary" href="{{route('education.details')}}" role="button">Add Another Education</a>
+    <a  class="btn btn-primary" href="{{route('experience.index')}}" role="button">Experience Section</a>
     @endsection

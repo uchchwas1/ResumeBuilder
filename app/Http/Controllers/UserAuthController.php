@@ -53,7 +53,7 @@ class UserAuthController extends Controller
         $data = $request->all();
         $check = $this->create($data);
          
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("home")->withSuccess('You have signed-in');
     }
 
 

@@ -20,6 +20,8 @@
 
     @endforeach
     </div>   
-    <a  class="btn btn-primary" href="{{route('education.details')}}" role="button">Add Another Education</a>
-    <a  class="btn btn-primary" href="{{route('experience.index')}}" role="button">Experience Section</a>
-    @endsection
+    <div class="col text-center">
+        <a  class="btn btn-info mt-3" href="{{route('education.details')}}" role="button">Add Education</a>
+        <a  class="btn btn-success mt-3" href="{{route('experience.index')}}" role="button">Experience Section</a>
+    </div>   
+        @endsection

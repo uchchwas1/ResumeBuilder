@@ -53,11 +53,12 @@ class UserDetailsController extends Controller
         $detail->phone = $request->input('phone');
         $detail->email = $request->input('email');
         $detail->address = $request->input('address');
+        $detail->summary = $request->input('summary');
         $detail->user_id = auth()->id();
         $detail->save();
 
         //return back();
-        return redirect()->route('education.details');
+        return redirect()->route('education.index');
     }
 
     /**

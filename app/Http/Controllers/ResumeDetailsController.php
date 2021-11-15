@@ -16,8 +16,8 @@ class ResumeDetailsController extends Controller
         $user = auth()->user();
         //$pdf = \PDF::loadView('resume', $data);
         //$pdf = \PDF::loadView('resume', compact('user'));
-        $pdf = \PDF::loadView('resume', compact('user'));
-        return $pdf->download('resume.pdf');
+        $pdf = \PDF::loadView('resume', compact('user'))->setOptions(['defaultFont' => 'sans-serif']);
+        return $pdf->download('Download_Resume.pdf');
        
     }
 }

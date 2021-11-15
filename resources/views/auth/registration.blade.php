@@ -3,6 +3,11 @@
 @section('content')
 <main class="signup-form">
     <div class="cotainer">
+    @if(session()->has('errors'))
+        @foreach($errors->all() as $error)
+           <div class="alert alert-danger" role="alert"><p>{{$error}}</p></div>
+        @endforeach
+    @endif
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
@@ -42,8 +47,14 @@
                             </div>
 
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Sign up</button>
+                                <button type="submit" id= "submit" class="btn btn-dark btn-block">Sign up</button>
+                                
                             </div>
+                                                            <!-- <script type="text/javascript">
+                                    document.getElementById("submit").onclick = function () {
+                                        location.href = "{{route('home')}}";
+                                    };
+                                </script> -->
                         </form>
 
                     </div>

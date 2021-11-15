@@ -24,10 +24,10 @@
             </div>
         </div>
 @endforeach
-    
-<a  class="btn btn-primary" href="{{route('experience.create')}}" role="button">Add Experiences</a>
-<a  class="btn btn-primary" href="{{route('skill.index')}}" role="button">Add Skills</a>
-
+<div class="col text-center">   
+    <a  class="btn btn-info mt-3" href="{{route('experience.create')}}" role="button">Add Experiences</a>
+    <a  class="btn btn-success mt-3" href="{{route('skill.index')}}" role="button">Add Skills</a>
+</div>
 @endsection
 
 

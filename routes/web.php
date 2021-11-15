@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserAuthController;
-
+use App\Http\Controllers\UserDetailsController;
+use App\Http\Controllers\EducationDetailsController;
+use App\Http\Controllers\ExperienceDetailsController;
+use App\Http\Controllers\SkillDetailsController;
+use App\Http\Controllers\ResumeDetailsController;
 //View routing
 
 // Route::get('/', function () {
@@ -36,14 +40,32 @@ Route::post('custom-registration', [UserAuthController::class, 'customRegistrati
 Route::get('signout', [UserAuthController::class, 'signOut'])->name('signout');
 
 //Route for
+//Auth::routes();
 Route::get('/home', function(){
     return view('HomePage');
 });
 Route::get('/about', function(){
     return view('AboutPage');
 });
+//Route::get('user-detail/create', [UserDetailsController::class, 'create'])->middleware('auth')->name('user-detail.create');
+//Route::post('user-detail', [UserDetailsController::class, 'store'])->middleware('auth');
+Route::get('education/details', [EducationDetailsController::class, 'create'])->middleware('auth')->name('education.details');
+Route::post('education/details', [EducationDetailsController::class, 'store'])->middleware('auth');
+Route::get('education', [EducationDetailsController::class, 'index'])->middleware('auth')->name('education.index');
+Route::get('education/edit', [EducationDetailsController::class, 'edit'])->middleware('auth')->name('education.edit');
+Route::put('education/update', [EducationDetailsController::class, 'update'])->middleware('auth')->name('education.update');
+Route::delete('education/destroy', [EducationDetailsController::class, 'destroy'])->middleware('auth')->name('education.destroy');
+
+// Auth::routes();
+// Route::resource('user-detail', 'UserDetailsController')->middleware('auth');
+// Route::resource('education', 'EducationDetailsController')->middleware('auth');
 
 
+Route::resource('user-detail', UserDetailsController::class)->middleware('auth');
 
-
+Route::resource('education', EducationDetailsController::class)->middleware('auth');
+Route::resource('experience', ExperienceDetailsController::class)->middleware('auth');
+Route::resource('skill', SkillDetailsController::class)->middleware('auth');
+Route::get('resume', [ResumeDetailsController::class, 'index'])->name('resume.index')->middleware('auth');
+Route::get('resume/downlaod', [ResumeDetailsController::class, 'download'])->name('resume.download')->middleware('auth');
 ?>

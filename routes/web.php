@@ -41,7 +41,7 @@ Route::get('signout', [UserAuthController::class, 'signOut'])->name('signout');
 
 //Route for
 //Auth::routes();
-Route::get('/home', function(){
+Route::get('/', function(){
     return view('HomePage');
 })->name('home');
 Route::get('/about', function(){
